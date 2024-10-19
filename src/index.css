@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s all ease;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  overflow: hidden; /* Prevents horizontal scrolling */
+}
+.main-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.main-section .logo {
+  width: 150px;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+}
+.main-section .logo img {
+  width: 100%;
+  object-fit: cover;
+}
+.main-section::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-image: url("./assets/c2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.8;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.3); 
+}
+.formDiv {
+  width: 100%;
+}
+.form {
+  display: flex;
+  margin: auto;
+  gap: 0.3rem;
+  width: 90%;
+  justify-content: center;
+  max-width: 600px; /* Limit the maximum width for larger screens */
+  flex-wrap: wrap; 
+}
+.form input {
+  padding: 0.8rem 4rem;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  width: 100%; /* Ensure input takes full width on smaller devices */
+  max-width: 400px; 
+ 
+}
+.form input:hover{
+  border: 0.2rem solid #8d38d7;
+}
+
+.form .btn {
+  padding: 0.8rem 3.7rem;
+  border-radius: 0.5rem;
+  background-color: #8d38d7;
+  color: #fff;
+  border: 0.1rem solid #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  width: 100%;
+}
+.form .btn:hover{
+  color: #fff;
+  background-color: black;
+}
+
+.countryData {
+  background-color: #ddc7f0;
+  border-radius: 0.6rem;
+  flex: 1 1 30rem;
+  color: black;
+  padding: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  overflow-y: auto;
+  border: 0.2rem solid rgb(160, 149, 149);
+}
+h1 {
+  font-size: 4.8rem;
+  margin: 1rem;
+  color: rgb(244, 162, 9);
+  font-weight: bolder;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.5); /* White with 50% opacity */
+  color: #000; /* Text color */
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  color: transparent; /* Makes the inside of the text transparent */
+  -webkit-text-stroke: 2px #8d38d7;
+}
+.countries {
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
+  gap: 1rem;
+  width: 100%;
+  max-height: 700px;
+  overflow-y: auto;
+  width: 100%;
+  max-height: 70vh; /* Limit height to 70% of the viewport */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 1rem;
+}
+.countryData:hover {
+  border: 0.2rem solid rgb(58, 17, 204);
+  transition: 0.3s all ease;
+}
+
+.countries h2 {
+  font-size: 3.6rem;
+  color: rgb(135, 88, 222);
+  padding: 1rem;
+}
+.countryData p {
+  font-size: 1.6rem;
+  margin: 0.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  
+  h1 {
+    font-size: 2rem;
+  }
+  .main-section .logo{
+    width: 80px;
+    top: -10px ;
+  }
+ 
+ 
+}
+
+@media only screen and (max-width: 425px) {
+  html {
+    font-size: 50%;
+  }
+  .form {
+    max-width: unset;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .form input,
+  .form .btn {
+    width: 100%; /* Make both the input and the button take full width */
+    max-width: unset; /* Remove any max-width limitations */
+  }
+  .countryData {
+    max-height: 700px;
+    overflow-y: scroll;
+  }
+  
+
+  .countries {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
