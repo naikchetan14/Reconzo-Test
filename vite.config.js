@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: 'dist' // Ensure this matches your Vercel configuration
-  }
+    rollupOptions: {
+      external: ['react-dom/client'],
+    },
+  },
 })
